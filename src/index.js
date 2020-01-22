@@ -1,12 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const user = {
+    name: 'George Villanueva',
+    age: 28,
+    country: 'México'
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+function getUserInfo(user) {
+    return `Hello, my name is ${user.name} and I'am ${user.age} years old, I'am from ${user.country}`;
+}
+//element declaration
+const App = <h1>{getUserInfo(user)}</h1>
+
+//Show the first element <elemnt to render, element in wich render> 
+ReactDOM.render(App, document.getElementById('root'))
